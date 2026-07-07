@@ -1,6 +1,12 @@
 const leaderboardList = document.getElementById("leaderboardList");
 const emptyMsg = document.getElementById("emptyMsg");
 
+// Secret admin check — visit the page with ?admin=veshraj123 in the URL
+// to reveal the Clear Leaderboard button. Change "veshraj123" to whatever
+const ADMIN_SECRET = "veshraj123";
+const urlParams = new URLSearchParams(window.location.search);
+const isAdmin = urlParams.get("admin") === ADMIN_SECRET;
+
 function renderLeaderboard() {
   const leaderboard = JSON.parse(localStorage.getItem("leaderboard") || "[]");
 
@@ -37,11 +43,19 @@ document.getElementById("backBtn").addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
-document.getElementById("clearBtn").addEventListener("click", () => {
-  if (confirm("Are you sure you want to clear the leaderboard?")) {
-    localStorage.removeItem("leaderboard");
-    renderLeaderboard();
-  }
-});
+// Only add the Clear Leaderboard button if the secret admin key is present
+if (isAdmin) {
+  const btnRow = document.querySelector(".btn-row");
+  const clearBtn = document.createElement("button");
+  clearBtn.id = "clearBtn";
+  clearBtn.textContent = "🗑 Clear Leaderboard";
+  clearBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear the leaderboard?")) {
+      localStorage.removeItem("leaderboard");
+      renderLeaderboard();
+    }
+  });
+  btnRow.appendChild(clearBtn);
+}
 
 renderLeaderboard();
