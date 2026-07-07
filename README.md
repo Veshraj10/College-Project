@@ -37,8 +37,6 @@ College-Project/
 │── css/
 │── js/
 │── images/
-│── README.md
-│── LICENSE
 ```
 
 ## How to Run
