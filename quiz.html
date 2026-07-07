@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz | FIFA World Cup Ultimate Quiz</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/quiz.css" />
   </head>
@@ -17,7 +24,7 @@
           <span id="levelBadge" class="badge">EASY</span>
           <span id="questionCount">Question 1 / 20</span>
           <div class="right-controls">
-            <span id="scoreDisplay">Score: 0</span>
+            <span id="scoreDisplay" class="scoreboard-chip">Score: 0</span>
             <button id="muteBtn" class="mute-btn" title="Mute/unmute sounds">
               🔊
             </button>
@@ -29,7 +36,7 @@
         <div class="timer-wrap">
           <div id="timerBar" class="timer-bar"></div>
         </div>
-        <p id="timerText">10s</p>
+        <p id="timerText" class="scoreboard-chip timer-chip">10s</p>
 
         <div id="questionArea" class="question-area">
           <h2 id="questionText">Loading question...</h2>

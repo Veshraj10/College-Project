@@ -1,43 +1,53 @@
 :root {
-  --bg-color: #081420;
-  --bg-overlay-start: rgba(8, 20, 32, 0.85);
-  --bg-overlay-end: rgba(8, 20, 32, 0.95);
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.15);
-  --text-color: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.7);
-  --text-muted-strong: rgba(255, 255, 255, 0.85);
-  --accent: #ffd166;
-  --accent-hover: #ffe08a;
-  --accent-text: #081420;
-  --input-bg: rgba(255, 255, 255, 0.05);
-  --option-bg: rgba(255, 255, 255, 0.05);
-  --option-border: rgba(255, 255, 255, 0.15);
-  --option-hover-bg: rgba(255, 255, 255, 0.15);
-  --panel-bg: rgba(255, 255, 255, 0.05);
-  --shadow-color: rgba(0, 0, 0, 0.4);
-  --dot-empty: rgba(255, 255, 255, 0.15);
+  --pitch-dark: #071c12;
+  --pitch-mid: #0e3320;
+  --stripe-a: #0a2417;
+  --stripe-b: #0e3320;
+  --card-bg: rgba(244, 247, 242, 0.06);
+  --card-border: rgba(244, 247, 242, 0.14);
+  --text-color: #f4f7f2;
+  --text-muted: rgba(244, 247, 242, 0.68);
+  --text-muted-strong: rgba(244, 247, 242, 0.85);
+  --accent: #ffb100;
+  --accent-hover: #ffc233;
+  --accent-text: #071c12;
+  --input-bg: rgba(244, 247, 242, 0.05);
+  --option-bg: rgba(244, 247, 242, 0.05);
+  --option-border: rgba(244, 247, 242, 0.14);
+  --option-hover-bg: rgba(244, 247, 242, 0.13);
+  --panel-bg: rgba(244, 247, 242, 0.05);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --dot-empty: rgba(244, 247, 242, 0.15);
+  --pitch-line: rgba(244, 247, 242, 0.07);
+  --scoreboard-bg: #04140c;
+  --scoreboard-text: #ffb100;
+  --scoreboard-glow: rgba(255, 177, 0, 0.55);
 }
 
 [data-theme="light"] {
-  --bg-color: #eef1f5;
-  --bg-overlay-start: rgba(238, 241, 245, 0.9);
-  --bg-overlay-end: rgba(238, 241, 245, 0.97);
+  --pitch-dark: #eef3ec;
+  --pitch-mid: #e2ebe0;
+  --stripe-a: #eef3ec;
+  --stripe-b: #e5ede3;
   --card-bg: rgba(255, 255, 255, 0.85);
-  --card-border: rgba(8, 20, 32, 0.1);
-  --text-color: #0c1b28;
-  --text-muted: rgba(12, 27, 40, 0.65);
-  --text-muted-strong: rgba(12, 27, 40, 0.8);
-  --accent: #e08e2b;
-  --accent-hover: #f0a13f;
+  --card-border: rgba(7, 28, 18, 0.1);
+  --text-color: #0d2416;
+  --text-muted: rgba(13, 36, 22, 0.65);
+  --text-muted-strong: rgba(13, 36, 22, 0.8);
+  --accent: #c77d00;
+  --accent-hover: #dd8e10;
   --accent-text: #ffffff;
-  --input-bg: rgba(8, 20, 32, 0.04);
-  --option-bg: rgba(8, 20, 32, 0.04);
-  --option-border: rgba(8, 20, 32, 0.12);
-  --option-hover-bg: rgba(8, 20, 32, 0.08);
-  --panel-bg: rgba(8, 20, 32, 0.04);
-  --shadow-color: rgba(8, 20, 32, 0.15);
-  --dot-empty: rgba(8, 20, 32, 0.12);
+  --input-bg: rgba(13, 36, 22, 0.04);
+  --option-bg: rgba(13, 36, 22, 0.04);
+  --option-border: rgba(13, 36, 22, 0.12);
+  --option-hover-bg: rgba(13, 36, 22, 0.08);
+  --panel-bg: rgba(13, 36, 22, 0.04);
+  --shadow-color: rgba(13, 36, 22, 0.15);
+  --dot-empty: rgba(13, 36, 22, 0.12);
+  --pitch-line: rgba(13, 36, 22, 0.06);
+  --scoreboard-bg: #0d2416;
+  --scoreboard-text: #ffd166;
+  --scoreboard-glow: rgba(255, 209, 102, 0.4);
 }
 
 body {
@@ -46,17 +56,81 @@ body {
     color 0.3s ease;
 }
 
+/* Pitch background: mown-grass stripes + a faint center circle & halfway line */
+.overlay {
+  position: relative;
+  background-color: var(--pitch-dark);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--stripe-a) 0px,
+    var(--stripe-a) 90px,
+    var(--stripe-b) 90px,
+    var(--stripe-b) 180px
+  );
+  overflow: hidden;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 620px;
+  height: 620px;
+  max-width: 90vw;
+  max-height: 90vw;
+  border: 1.5px solid var(--pitch-line);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--pitch-line);
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scoreboard-style digital chip, used for score/timer/final score */
+.scoreboard-chip {
+  font-family: "Space Mono", monospace;
+  background: var(--scoreboard-bg);
+  color: var(--scoreboard-text);
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--scoreboard-glow);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: inline-block;
+}
+
 .theme-toggle {
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 999;
   padding: 8px 14px;
-  border-radius: 20px;
+  border-radius: 6px;
   border: 1px solid var(--card-border);
   background: var(--card-bg);
   color: var(--text-color);
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
+  font-weight: 600;
   cursor: pointer;
   backdrop-filter: blur(10px);
   transition:
@@ -66,4 +140,25 @@ body {
 
 .theme-toggle:hover {
   transform: translateY(-2px);
+}
+
+.corner-logo {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  z-index: 999;
+  border-radius: 8px;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: "Inter", sans-serif;
+  color: var(--text-muted);
 }

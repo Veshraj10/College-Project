@@ -5,10 +5,9 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   color: var(--text-color);
-  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,12 +29,10 @@ body {
   text-align: center;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 40px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px var(--shadow-color);
-  position: relative;
-  z-index: 2;
 }
 
 .trophy {
@@ -46,18 +43,20 @@ body {
 }
 
 .best-banner {
-  background: linear-gradient(90deg, #ffd166, #ffb703);
-  color: #081420;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  color: var(--accent-text);
   font-weight: bold;
   padding: 8px 14px;
-  border-radius: 20px;
+  border-radius: 6px;
   display: inline-block;
   margin-bottom: 15px;
   font-size: 0.85rem;
 }
 
 #resultTitle {
-  font-size: 1.8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
   margin-bottom: 8px;
 }
 
@@ -70,7 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   margin-bottom: 20px;
 }
 
@@ -82,9 +81,8 @@ body {
 }
 
 .score-value {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--accent);
+  font-size: 2.4rem;
+  padding: 6px 22px;
 }
 
 .performance-msg {
@@ -103,9 +101,12 @@ body {
   flex: 1;
   padding: 14px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition:
     transform 0.15s ease,
@@ -136,9 +137,10 @@ body {
 .share-btn {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid var(--card-border);
   background: transparent;
+  font-family: "Inter", sans-serif;
   color: var(--text-muted-strong);
   font-size: 0.9rem;
   cursor: pointer;

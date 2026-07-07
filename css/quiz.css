@@ -5,10 +5,9 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   color: var(--text-color);
-  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +27,7 @@ body {
   max-width: 100%;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 35px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px var(--shadow-color);
@@ -41,6 +40,8 @@ body {
   font-size: 0.9rem;
   color: var(--text-muted-strong);
   margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .right-controls {
@@ -62,12 +63,12 @@ body {
 
 .badge {
   padding: 4px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+  border-radius: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
   background: #2ecc71;
-  color: #081420;
+  color: #071c12;
 }
 
 .badge.medium {
@@ -90,8 +91,7 @@ body {
     transform: scale(1);
   }
   40% {
-    transform: scale(1.35);
-    color: var(--accent);
+    transform: scale(1.15);
   }
   100% {
     transform: scale(1);
@@ -123,7 +123,6 @@ body {
 .dot.correct {
   background: #2ecc71;
 }
-
 .dot.wrong {
   background: #e74c3c;
 }
@@ -134,7 +133,7 @@ body {
   background: var(--dot-empty);
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .timer-bar {
@@ -150,14 +149,14 @@ body {
   background: #e74c3c;
 }
 
-#timerText {
-  text-align: right;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+.timer-chip {
+  float: right;
   margin-bottom: 20px;
+  font-size: 0.85rem;
 }
 
 .question-area {
+  clear: both;
   animation: fadeInQuestion 0.4s ease;
 }
 
@@ -188,10 +187,11 @@ body {
   width: 100%;
   text-align: left;
   padding: 14px 18px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid var(--option-border);
   background: var(--option-bg);
   color: var(--text-color);
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition:
@@ -213,7 +213,7 @@ body {
 .option-btn.correct {
   background: #2ecc71;
   border-color: #2ecc71;
-  color: #081420;
+  color: #071c12;
   font-weight: bold;
 }
 
