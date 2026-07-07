@@ -1,1 +1,51 @@
-index.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIFA World Cup Ultimate Quiz</title>
+
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
+    <div class="overlay">
+      <div class="quiz-card">
+        <h1>🏆 FIFA WORLD CUP</h1>
+        <h2>Ultimate Quiz Challenge 2026</h2>
+
+        <p class="subtitle">Test Your Football Knowledge!</p>
+
+        <input type="text" id="playerName" placeholder="Enter Your Name" />
+        <input type="email" id="playerEmail" placeholder="Email (optional)" />
+        <p id="errorMsg"></p>
+
+        <button id="startBtn">🚀 Start Quiz</button>
+
+        <div class="rules">
+          <h3>Quiz Rules</h3>
+
+          <ul>
+            <li>✅ 20 Questions</li>
+            <li>⏱️ 10 Seconds Per Question</li>
+            <li>➕ Correct = +1</li>
+            <li>➖ Wrong = -1</li>
+            <li>🔥 Levels Unlock Automatically</li>
+            <li>
+              🎯 Q1-6 Easy | Q7-12 Medium | Q13-18 Hard | Q19-20 Ultra Hard
+            </li>
+          </ul>
+        </div>
+
+        <a class="leaderboard-link" href="leaderboard.html"
+          >View Leaderboard →</a
+        >
+      </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

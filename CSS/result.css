@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.quiz-card {
+  width: 480px;
+  max-width: 100%;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px var(--shadow-color);
+  position: relative;
+  z-index: 2;
+}
+
+.trophy {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.best-banner {
+  background: linear-gradient(90deg, #ffd166, #ffb703);
+  color: #081420;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+}
+
+#resultTitle {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.player-line {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.score-label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.performance-msg {
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+  color: var(--text-muted-strong);
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.btn-row button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+#playAgainBtn {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+#playAgainBtn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+#leaderboardBtn {
+  background: var(--panel-bg);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+}
+
+#leaderboardBtn:hover {
+  background: var(--option-hover-bg);
+  transform: translateY(-2px);
+}
+
+.share-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--text-muted-strong);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.share-btn:hover {
+  background: var(--option-hover-bg);
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  z-index: 1;
+  animation-name: confettiFall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}

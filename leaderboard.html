@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard | FIFA World Cup Ultimate Quiz</title>
+
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/leaderboard.css" />
+  </head>
+  <body>
+    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
+    <div class="overlay">
+      <div class="quiz-card">
+        <h1>🏆 Leaderboard</h1>
+        <p class="subtitle">Top football minds so far</p>
+
+        <ol id="leaderboardList" class="leaderboard-list"></ol>
+
+        <p id="emptyMsg" class="empty-msg" style="display: none">
+          No scores yet — be the first to play!
+        </p>
+
+        <div class="btn-row">
+          <button id="backBtn">⬅ Back to Home</button>
+          <button id="clearBtn">🗑 Clear Leaderboard</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/leaderboard.js"></script>
+  </body>
+</html>

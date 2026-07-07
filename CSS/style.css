@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image:
+    linear-gradient(180deg, var(--bg-overlay-start), var(--bg-overlay-end)),
+    url("../images/stadium.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.quiz-card {
+  width: 500px;
+  max-width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px var(--shadow-color);
+  text-align: center;
+}
+
+.quiz-card h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.quiz-card h2 {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+#playerName,
+#playerEmail {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+#playerName::placeholder,
+#playerEmail::placeholder {
+  color: var(--text-muted);
+}
+
+#playerName:focus,
+#playerEmail:focus {
+  border-color: var(--accent);
+}
+
+#startBtn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+#startBtn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+#errorMsg {
+  color: #ff6b6b;
+  margin-top: -6px;
+  margin-bottom: 15px;
+  min-height: 18px;
+  font-size: 0.9rem;
+}
+
+.rules {
+  margin-top: 25px;
+  text-align: left;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 15px 20px;
+}
+
+.rules h3 {
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.rules ul {
+  list-style: none;
+}
+
+.rules li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted-strong);
+}
+
+.leaderboard-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed var(--text-muted);
+}
+
+.leaderboard-link:hover {
+  color: var(--accent);
+}
