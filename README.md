@@ -61,6 +61,6 @@ This project is licensed under the MIT License. See the LICENSE file for more in
 
 ## Author
 
-**Vesh Raj**
+**Vesh Raj Dugal**
 
 GitHub: https://github.com/Veshraj10
